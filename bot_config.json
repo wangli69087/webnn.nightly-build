@@ -1,0 +1,27 @@
+{
+  "target-os": "",
+  "target-cpu": "",
+  "gnArgs": {
+    "is-debug": false,
+    "backend": "null",
+    "chromium-extra": {
+      "wire": true,
+      "gpu-buffer": true
+    }
+  },
+  "clean-build": true,
+  "logging": {
+    "level": "info"
+  },
+  "archive-server": {
+    "host": "",
+    "dir": "",
+    "ssh-user": ""
+  },
+  "email-service": {
+    "user": "",
+    "host": "",
+    "from": "",
+    "to": ""
+  }
+}

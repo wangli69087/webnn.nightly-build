@@ -1,0 +1,15 @@
+{
+  "file": [
+    "DirectML.dll",
+    "dnnl.dll",
+    "ngraph_c_api.dll",
+    "libc++.dll",
+    "webnn_native.dll",
+    "webnn_proc.dll",
+    "*.exe"
+  ],
+  "directory": [
+    "examples",
+    "node"
+  ]
+}

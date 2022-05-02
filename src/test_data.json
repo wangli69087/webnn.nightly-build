@@ -1,0 +1,21 @@
+{
+  "default": {
+    "directory": [
+      "examples/images",
+      "examples/labels",
+      "node/third_party/webnn-polyfill/test-data/models"
+    ]
+  },
+  "node": {
+    "file": [
+      "node/build/Release/webnn_node.node",
+      "node/node_setup.js",
+      "node/package.json"
+    ],
+    "directory": [
+      "node/examples",
+      "node/lib",
+      "node/third_party/webnn-polyfill/test"
+    ]
+  }
+}

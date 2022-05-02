@@ -1,0 +1,25 @@
+#!/bin/bash
+# This script is for build webnn-native on Linux platform.
+
+if [ $# == 0 ]
+then
+  echo "Run build with default null backend and default bot_config.json."
+  ./bin/build_webnn build
+else
+  if [[ $1 == --* ]]
+  then
+    # $1 is option
+    echo "Run build with argument $1 $2."
+    ./bin/build_webnn build $1 $2
+  else
+    # $1 is command
+    if [[ $2 == --* ]]
+    then
+      echo "Run all command."
+      ./bin/build_webnn $1 $2 $3
+    else
+      echo "Run $1 command."
+      ./bin/build_webnn $1
+    fi
+  fi
+fi

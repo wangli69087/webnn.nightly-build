@@ -1,0 +1,80 @@
+#!/usr/bin/env node
+
+// Use of this source code is governed by an Apache 2.0 license
+// that can be found in the LICENSE file.
+
+'use strict';
+
+const path = require('path');
+const {Command} = require('commander');
+const {Builder} = require('../src/builder');
+
+const rootDir = path.join(path.dirname(process.argv[1]), '..', '..');
+const builder = new Builder(rootDir);
+
+const program = new Command();
+program.version(require('../package.json').version);
+
+program
+  .command('sync')
+  .action(() => {
+    builder.run('sync');
+  });
+
+program
+  .command('pull')
+  .action(() => {
+    builder.run('pull');
+  });
+
+program
+  .command('build')
+  .option('-b, --backend <backend>', 'Build with target backend', null)
+  .option('-c, --config <config>', 'Configuration file', 'bot_config.json')
+  .action((options) => {
+    builder.run('build', options);
+  });
+
+program
+  .command('build-node')
+  .option('-b, --backend <backend>', 'Build node addon', null)
+  .option('-c, --config <config>', 'Configuration file', 'bot_config.json')
+  .action((options) => {
+    builder.run('build-node', options);
+  });
+
+program
+  .command('package')
+  .action(() => {
+    builder.run('package');
+  });
+
+program
+  .command('upload')
+  .action(() => {
+    builder.run('upload');
+  });
+
+program
+  .command('notify')
+  .action(() => {
+    builder.run('notify');
+  });
+
+program
+  .command('all')
+  .option('-b, --backend <backend>', 'Build with target backend', null)
+  .option('-c, --config <config>', 'Configuration file', 'bot_config.json')
+  .action((options) => {
+    builder.run('all', options);
+  });
+
+program
+  .command('all-node')
+  .option('-b, --backend <backend>', 'Build with target backend and build node addon', null)
+  .option('-c, --config <config>', 'Configuration file', 'bot_config.json')
+  .action((options) => {
+    builder.run('all-node', options);
+  });
+
+program.parse();

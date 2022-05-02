@@ -1,0 +1,28 @@
+{
+  "target-os": "",
+  "target-cpu": "",
+  "gnArgs": {
+    "is-debug": false,
+    "backend": "dml",
+    "chromium-extra": {
+      "wire": true,
+      "gpu-buffer": false
+    }
+  },
+  "clean-build": false,
+  "logging": {
+    "level": "debug",
+    "file": ""
+  },
+  "archive-server": {
+    "host": "",
+    "dir": "",
+    "ssh-user": ""
+  },
+  "email-service":{
+    "user": "WebNNChromiumBuilder",
+    "host": "",
+    "from": "WebNNChromiumBuilder",
+    "to": ""
+  }
+}
